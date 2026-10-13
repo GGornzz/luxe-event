@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE EVENT | Extraordinary Experiences</title>
+    <link rel="icon" href="data:,">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="#" class="logo">
+            <span class="logo-symbol">✦</span>
+            LUXE<span>EVENT.</span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#events">Explore Events</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button class="btn btn-gold" id="createBtn">
+            + Create Event
+        </button>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="hero-art"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="live-dot"></span>
+                    YOUR NEXT EXPERIENCE STARTS HERE
+                </div>
+
+                <h1>
+                    BEYOND<br>
+                    <span class="gold-text">ORDINARY.</span>
+                </h1>
+
+                <p>
+                    ค้นพบกิจกรรมสุดพิเศษ สร้างประสบการณ์ใหม่
+                    และเป็นส่วนหนึ่งของช่วงเวลาที่น่าจดจำ
+                    กับ LUXE EVENT
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#events" class="btn btn-gold btn-large">
+                        Explore Events ↗
+                    </a>
+                    <button class="btn btn-glass btn-large" id="heroCreateBtn">
+                        Host an Event →
+                    </button>
+                </div>
+
+                <div class="hero-bottom">
+                    <span>✦ CURATED EXPERIENCES</span>
+                    <span>EST. 2026</span>
+                </div>
+            </div>
+
+            <div class="hero-decoration">✧</div>
+        </section>
+
+        <!-- STATISTICS -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <span class="stat-icon">✦</span>
+                <div>
+                    <h2 id="totalEvents">0</h2>
+                    <p>TOTAL EVENTS</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">♛</span>
+                <div>
+                    <h2 id="totalRegistrations">0</h2>
+                    <p>REGISTRATIONS</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">✧</span>
+                <div>
+                    <h2 id="availableSeats">0</h2>
+                    <p>AVAILABLE SEATS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVENTS SECTION -->
+        <section class="events-section" id="events">
+            <div class="section-heading">
+                <div>
+                    <div class="section-label">
+                        ✦ DISCOVER WHAT'S NEXT
+                    </div>
+                    <h2>Explore <span>Events.</span></h2>
+                    <p>ประสบการณ์สุดพิเศษที่รอให้คุณค้นพบ</p>
+                </div>
+
+                <button class="btn btn-outline" id="sectionCreateBtn">
+                    + Add New Event
+                </button>
+            </div>
+
+            <div class="toolbar">
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input type="search" id="searchInput" placeholder="ค้นหาชื่อกิจกรรมหรือสถานที่...">
+                </div>
+
+                <select id="filterSelect" aria-label="กรองกิจกรรม">
+                    <option value="all">All Events</option>
+                    <option value="available">Available</option>
+                    <option value="full">Fully Booked</option>
+                </select>
+
+                <span id="resultCount" class="result-count">
+                    0 EVENTS
+                </span>
+            </div>
+
+            <div class="events-grid" id="eventsGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <div class="empty-icon">✧</div>
+                <h3>No Events Found</h3>
+                <p>ยังไม่มีกิจกรรมที่ตรงกับการค้นหาของคุณ</p>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section class="about-section" id="about">
+            <div class="about-mark">✦</div>
+            <div class="section-label">THE LUXE EXPERIENCE</div>
+            <h2>MAKE EVERY MOMENT <span>COUNT.</span></h2>
+            <p>
+                From unforgettable nights to inspiring moments.
+                Every great experience begins with a single event.
+            </p>
+            <a href="#events" class="btn btn-outline">
+                Discover Experiences ↗
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">✦ LUXE EVENT.</div>
+        <p>Where extraordinary experiences begin.</p>
+        <div class="footer-line"></div>
+        <span>© 2026 LUXE EVENT · MINI PROJECT #2</span>
+    </footer>
+
+    <!-- MODAL: CREATE / EDIT EVENT -->
+    <div class="modal-backdrop" id="eventModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle">
+            <button class="modal-close" type="button" data-close aria-label="ปิด">×</button>
+
+            <div class="modal-label">✦ EVENT MANAGEMENT</div>
+            <h2 id="eventModalTitle">Create Event</h2>
+            <p class="modal-subtitle">
+                Make something extraordinary happen.
+            </p>
+
+            <form id="eventForm">
+                <input type="hidden" id="eventId">
+
+                <label for="eventTitle">Event Name</label>
+                <input id="eventTitle" type="text" placeholder="ชื่อกิจกรรม" maxlength="100" required>
+
+                <label for="eventDescription">Description</label>
+                <textarea id="eventDescription" rows="3" placeholder="รายละเอียดกิจกรรม" required></textarea>
+
+                <div class="form-row">
+                    <div>
+                        <label for="eventDate">Date</label>
+                        <input id="eventDate" type="date" required>
+                    </div>
+                    <div>
+                        <label for="eventTime">Time</label>
+                        <input id="eventTime" type="time" required>
+                    </div>
+                </div>
+
+                <label for="eventLocation">Location</label>
+                <input id="eventLocation" type="text" placeholder="สถานที่จัดกิจกรรม" required>
+
+                <label for="eventCapacity">Maximum Attendees</label>
+                <input id="eventCapacity" type="number" min="1" max="10000" value="100" required>
+
+                <button class="btn btn-gold btn-submit" type="submit">
+                    Save Event ✦
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: REGISTER -->
+    <div class="modal-backdrop" id="registerModal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+            <button class="modal-close" type="button" data-close aria-label="ปิด">×</button>
+
+            <div class="modal-label">✦ RESERVE YOUR SPOT</div>
+            <h2 id="registerTitle">Join the Experience</h2>
+            <p class="modal-subtitle" id="registerEventName"></p>
+
+            <form id="registerForm">
+                <input type="hidden" id="registerEventId">
+
+                <label for="attendeeName">Full Name</label>
+                <input id="attendeeName" type="text" placeholder="ชื่อ-นามสกุล" required>
+
+                <label for="attendeeEmail">Email Address</label>
+                <input id="attendeeEmail" type="email" placeholder="you@example.com" required>
+
+                <button type="submit" class="btn btn-gold btn-submit">
+                    Confirm Registration ✦
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ATTENDEES -->
+    <div class="modal-backdrop" id="attendeesModal" hidden>
+        <div class="modal modal-wide" role="dialog" aria-modal="true" aria-labelledby="attendeesTitle">
+            <button class="modal-close" type="button" data-close aria-label="ปิด">×</button>
+
+            <div class="modal-label">✦ GUEST LIST</div>
+            <h2 id="attendeesTitle">Attendees</h2>
+            <p class="modal-subtitle" id="attendeesEventName"></p>
+
+            <div id="attendeesList" class="attendees-list"></div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+
+</html>
